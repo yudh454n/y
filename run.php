@@ -26,9 +26,9 @@ $result = curl_exec($ch);
 $json = json_decode($result, true);
 //print_r($json);
 if(preg_match("/IDENTIFIER_EXISTS/", $result)){
-    return "Email Hidup";
+    return "HIDUP";
 }else{
-    return "Email Mati";
+    return "MATI";
 }
 }
 function save($filename, $content)
@@ -61,10 +61,10 @@ if($email != NULL){
 if(preg_match("/yahoo.com/", $email)){
 $yahu = cek($em[0]);
 echo $comp."|".$yahu."\n";
-save("hasilcekyahoo.txt", $comp."|".$yahu);
+save("Yahoo.txt", $comp."|".$yahu);
 }else{
 echo $comp."\n";
-save("hasilgrabemail.txt", $comp);
+save("allmail.txt", $comp);
 }
 
 }
